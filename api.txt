@@ -1,0 +1,5 @@
+Here is my key: 87b007b4
+
+You can get your free api from here:
+
+OMDb API: http://www.omdbapi.com/

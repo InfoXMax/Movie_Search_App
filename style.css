@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+
+}
+.result {
+    display: flex;
+}
+h1 {
+    color: #3498db;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 15px;
+    width: 70%;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+#searchButton {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+#searchButton:hover {
+    background-color: #2980b9;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.movie-card {
+    width: 166px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    overflow: hidden;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #2980b9;
+}
+
+.movie-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.movie-year {
+    font-size: 16px;
+    color: #777;
+}
+
+.movie-type {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #555;
+}
+
+.movie-poster {
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+#movieDetails {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+hr {
+    border: 0.5px solid #ddd;
+    margin: 30px 0;
+}
