@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const movieContainer = document.getElementById('movieContainer');
     const movieDetails = document.getElementById('movieDetails');
     const backButton = document.getElementById('backButton');
+    const pageSize = 10; // Number of results per page
+    let currentPage = 1;
 
     searchButton.addEventListener('click', () => {
         const searchTerm = searchInput.value;
@@ -18,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function searchMovies(searchTerm) {
         const apiKey = '87b007b4';
-        const apiUrl = `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`;
+        const apiUrl = `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}`;
 
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
                 if (data.Search) {
                     displayMovies(data.Search);
+                    displayPagination(data.totalResults);
                 } else {
                     movieContainer.innerHTML = '<p>No results found.</p>';
                 }
@@ -75,6 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 showBackButton();
             })
             .catch(error => console.error('Error:', error));
+    }
+
+    function displayPagination(totalResults) {
+        const totalPages = Math.ceil(totalResults / pageSize);
+
+        const paginationContainer = document.createElement('div');
+        paginationContainer.classList.add('pagination');
+
+        for (let page = 1; page <= totalPages; page++) {
+            const pageButton = document.createElement('button');
+            pageButton.innerText = page;
+            pageButton.addEventListener('click', () => {
+                currentPage = page;
+                searchMovies(searchInput.value);
+            });
+            paginationContainer.appendChild(pageButton);
+        }
+
+        movieContainer.appendChild(paginationContainer);
     }
 
     function showBackButton() {

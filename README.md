@@ -15,6 +15,8 @@ Welcome to the Movie Search App! This web application allows users to search for
 - **Detailed movie information:** Click on a movie to view comprehensive details.
 - **Easy navigation:** Use the "Back to Search" button to quickly return to the search results.
 
+![App Screenshot](./screenshot.png)
+
 ## API
 This app uses the [OMDb API](http://www.omdbapi.com/) to fetch movie data. Ensure you have a valid API key. You can obtain one by visiting the [OMDb API website](http://www.omdbapi.com/).
 
